@@ -1,0 +1,12 @@
+git branch "branch name" // git branch add-to-cart (create branch on local)
+git branch // check all branch
+git checkout "branch create name" // git checkout add-to-cart (move to branch was created)
+git add .
+git commit -m "message"
+git push --set-upstream origin "branch create name" //git push --set-upstream origin add-to-cart (create branch on github and push)
+
+
+/*merge code*/
+git checkout "main branch" // git checkout main (move to main branch)
+git merge "branch name" // git merge add-to-cart 
+git push
