@@ -115,7 +115,7 @@
 <!-- Shipping Area End Here -->
 <!-- Begin Banner Area -->
 
-@*<div class="banner-area section-space-top-100">
+<div class="banner-area section-space-top-100">
     <div class="container">
         <h1 style="margin-bottom:30px;text-align:center">Best Seller</h1>
         <div class="row">
@@ -136,83 +136,14 @@
                         </li>
                     }
                 </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="all-items" role="tabpanel" aria-labelledby="all-items">
-                        @await Html.PartialAsync("_ListProductPartialView", allProduct)
-                    </div>
-                    @foreach (var item in Model.Products)
-                    {
-                        <div class="tab-pane fade" id="@item.category.Alias" role="tabpanel" aria-labelledby="@item.category.Alias">
-                            @await Html.PartialAsync("_ListProductPartialView", item.lsProducts)
-                        </div>
-                    }
-
-                </div>
-
             </div>
         </div>
     </div>
-</div>*@
+</div>
 <!-- Banner Area End Here -->
 <!-- Begin Product Area -->
 <!-- Product Area End Here -->
 <!-- Begin Blog Area -->
-@*@if (Model.TinTucs != null && Model.TinTucs.Count() > 0)
-{
-    <div class="blog-area section-space-y-axis-100">
-        <div class="container">
-            <div class="section-title text-center pb-55">
-                <h2 class="title mb-0">Latest Blog</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="swiper-container blog-slider">
-                        <div class="swiper-wrapper">
-                            @foreach (var item in Model.TinTucs)
-                            {
-                                string url = $"/tin-tuc/{item.Alias}-{item.PostId}.html";
-                                <div class="swiper-slide">
-                                    <div class="blog-item">
-                                        <div class="blog-img img-zoom-effect">
-                                            <a href="@url">
-                                                <img class="img-full" src="~/images/news/@item.Thumb" alt="Blog Image">
-                                            </a>
-                                        </div>
-                                        <div class="blog-content">
-                                            <div class="blog-meta text-dim-gray pb-3">
-                                                <ul>
-                                                    <li class="date"><i class="fa fa-calendar-o me-2"></i>@item.CreateDate</li>
-                                                    <li>
-                                                        <span class="comments me-3">
-                                                            <a href="javascript:void(0)">2 Comments</a>
-                                                        </span>
-                                                        <span class="link-share">
-                                                            <a href="javascript:void(0)">Share</a>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <h5 class="title mb-4">
-                                                <a href="@url">@item.Title</a>
-                                            </h5>
-                                            <p class="short-desc mb-5">@item.Scontents</p>
-                                            <div class="button-wrap">
-                                                <a class="btn btn-custom-size btn-dark btn-lg rounded-0" href="@url">Xem thêm</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
 
-                        </div>
-                        <!-- Add Arrows -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-}*@
 
 <!-- Blog Area End Here -->

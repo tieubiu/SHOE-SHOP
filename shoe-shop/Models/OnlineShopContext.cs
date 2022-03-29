@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
@@ -29,6 +27,7 @@ namespace OnlineMarket.Models
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Shipper> Shippers { get; set; }
         public virtual DbSet<TransactStatus> TransactStatuses { get; set; }
+        public virtual DbSet<Review> Reviews { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -308,6 +307,24 @@ namespace OnlineMarket.Models
                 entity.Property(e => e.TransactStatusId).HasColumnName("TransactStatusID");
 
                 entity.Property(e => e.Status).HasMaxLength(50);
+            });
+            modelBuilder.Entity<Review>(entity =>
+            {
+                entity.ToTable("Review");
+                entity.Property(e => e.Id)
+                    .HasColumnName("ID");
+
+                entity.Property(e => e.CreateDay).HasColumnType("datetime");
+
+                entity.Property(e => e.Email).HasMaxLength(250);
+
+                entity.Property(e => e.FullName).HasMaxLength(250);
+
+                entity.Property(e => e.Phone)
+                    .HasMaxLength(12)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Review1).HasColumnName("Review");
             });
 
             OnModelCreatingPartial(modelBuilder);
